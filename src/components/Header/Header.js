@@ -3,7 +3,6 @@ import cartIcon from '../../assets/icons/cart.svg';
 import forkLogo from '.././../assets/icons/fork-with-swirled-pasta-svgrepo-com.svg'
 import HeaderPicture from "./HeaderPicture";
 import classes from "./HeaderPicture.module.css";
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 
 const Header = (props) => {
 
@@ -22,6 +21,7 @@ const Header = (props) => {
                     >
                         <h2 style={{}}>Fork</h2>
                         <img
+                            alt='fork logo'
                             src={forkLogo}
                             style={{height: '125px', marginBottom: '-55px',}}
                         />
@@ -29,7 +29,7 @@ const Header = (props) => {
                 </Grid>
                 <Grid container item xs={6}>
                     <Typography theme={theme} sx={{flexGrow: 1}}>
-                        <img src={cartIcon} style={{height: '80px'}}/>
+                        <img src={cartIcon} style={{height: '80px'}} alt='header cart'/>
                     </Typography>
                 </Grid>
 
