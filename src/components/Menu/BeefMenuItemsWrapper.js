@@ -47,6 +47,7 @@ const BeefMenuItemsWrapper = () => {
 
 
     const renderMenuItems = () => beef.map(beefMeal =>
+        <Grid item  xl={6} lg={6} xs={12}>
             <MenuItem
                 key={beefMeal.id}
                 id={beefMeal.id}
@@ -56,12 +57,13 @@ const BeefMenuItemsWrapper = () => {
                 description={beefMeal.description}
                 image={beefMeal.image}
             />
+        </Grid>
     );
 
     if (isLoading) return <p>is loading</p>;
     if (httpError) return <p>http Error</p>;
 
-    return <Grid container sx={{width: '75%', margin: '0 auto'}}>
+    return <Grid container spacing={2}>
         {renderMenuItems()}
     </Grid>
 }

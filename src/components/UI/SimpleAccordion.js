@@ -8,12 +8,12 @@ import BeefMenuItemsWrapper from "../Menu/BeefMenuItemsWrapper";
 import classes from './SimpleAccordion.module.css';
 import SaladMenuItemsWrapper from "../Menu/SaladMenuItemsWrapper";
 import PizzaMenuItemsWrapper from "../Menu/PizzaMenuItemWrapper";
-import {Grid} from "@mui/material";
+import {Box} from "@mui/material";
 
 
 const SimpleAccordion = () => {
     return (
-            <Grid container sx={{marginTop: '500px'}}>
+            <Box flex={1} sx={{marginTop: '500px'}}>
                 <Accordion className={classes.accordionGradient}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon/>}
@@ -50,7 +50,7 @@ const SimpleAccordion = () => {
                         <SaladMenuItemsWrapper/>
                     </AccordionDetails>
                 </Accordion>
-            </Grid>
+            </Box>
     );
 }
 

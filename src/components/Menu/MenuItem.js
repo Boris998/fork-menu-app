@@ -21,49 +21,46 @@ const MenuItem = (props) => {
     }
 
     return (
-            <Grid
-                  container
-                  justifyContent='space-between'
-                  display='flex'
-                  alignItems='stretch'
-                  item
-                  xs={12}
-                  xl={6}
-                  sx={{
-                      flewGrow: 1,
-                      background: `url(${props.image}) no-repeat center center`,
-                      width: '100%',
-                      height: '50vh',
-                      backgroundSize: 'cover',
-                      borderRadius: '20px',
-                      color: 'white',
-                      padding: '2vh',
-                      opacity: '0.9',
-                  }}
-            >
-                <Grid container item xs={12}>
-                    <Grid item xs={6} align='left'>
-                        <Typography theme={theme} component={'h6'} variant={'h6'}>
-                            {props.name}
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={6} align={'right'}>
-                        <Typography theme={theme} component={'h4'} variant={'h4'}>
-                            ${props.price}
-                        </Typography>
-                    </Grid>
-                </Grid>
-                <Grid item xs={12} sx={{padding: '10%'}}>
+        <Grid
+            container
+            justifyContent="space-between"
+            sx={{
+                background: `url(${props.image}) no-repeat center center`,
+                height: '50vh',
+                backgroundSize: 'cover',
+                borderRadius: '20px',
+                color: 'white',
+                opacity: '0.9',
+                padding: '20px',
+            }}
+        >
+            <Grid container xs={12}>
+                <Grid item xs={6} align='left'>
                     <Typography theme={theme} component={'h6'} variant={'h6'}>
-                        {props.ingredients}
+                        {props.name}
                     </Typography>
                 </Grid>
-                <Grid item xs={12}>
-                        <Typography theme={theme} component={'span'} variant={'body2'}>
-                            <MenuItemForm onAddToCart={addToCartHandler}/>
-                        </Typography>
+                <Grid item xs={6} align={'right'}>
+                    <Typography theme={theme} component={'h4'} variant={'h4'}>
+                        ${props.price}
+                    </Typography>
                 </Grid>
             </Grid>
+            <Grid item xs={12}>
+                <Grid container sx={{height: '30vh', padding: '10%'}}>
+                    <Grid item xs={12}>
+                        <Typography theme={theme} component={'h6'} variant={'h6'}>
+                            {props.ingredients}
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid item xs={12}>
+                <Typography theme={theme} component={'span'} variant={'body2'}>
+                    <MenuItemForm onAddToCart={addToCartHandler}/>
+                </Typography>
+            </Grid>
+        </Grid>
     );
 };
 

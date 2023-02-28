@@ -46,21 +46,23 @@ const PizzaMenuItemsWrapper = () => {
 
 
     const renderMenuItems = () => pizzas.map(pizza =>
-        <MenuItem
-            key={pizza.id}
-            id={pizza.id}
-            name={pizza.name}
-            ingredients={pizza.ingredients}
-            price={pizza.price}
-            description={pizza.description}
-            image={pizza.image}
-        />
+        <Grid item  xl={6} lg={6} xs={12}>
+            <MenuItem
+                key={pizza.id}
+                id={pizza.id}
+                name={pizza.name}
+                ingredients={pizza.ingredients}
+                price={pizza.price}
+                description={pizza.description}
+                image={pizza.image}
+            />
+        </Grid>
     );
 
     if (isLoading) return <p>is loading</p>;
     if (httpError) return <p>http Error</p>;
 
-    return <Grid container sx={{width: '75%', margin: '0 auto'}}>
+    return <Grid container spacing={2}>
         {renderMenuItems()}
     </Grid>
 }
