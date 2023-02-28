@@ -1,6 +1,6 @@
 import classes from './HeaderPicture.module.css';
 
-const HeaderPicture = (props) => {
+const HeaderPicture = () => {
     return (
             <div className={classes['banner-area']}>
                 <h2>Fork</h2>

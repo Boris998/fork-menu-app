@@ -1,0 +1,4 @@
+.accordionGradient{
+    background: radial-gradient(circle, rgba(49,77,77,0.94) 53%, rgba(35,55,91,0.7) 100%);
+    width: 100%;
+}

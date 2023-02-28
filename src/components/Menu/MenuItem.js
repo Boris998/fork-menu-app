@@ -1,62 +1,69 @@
-import {
-    Button,
-    createTheme,
-    Grid,
-    responsiveFontSizes,
-    Typography
-} from "@mui/material";
-import addToCart from '../../assets/icons/add-to-cart.png';
-
+import {createTheme, Grid, responsiveFontSizes, Typography} from "@mui/material";
+import * as React from 'react';
+import {useContext} from 'react';
+import MenuItemForm from "./MenuItemForm";
+import CartContext from '../../store/cart-context';
 
 const MenuItem = (props) => {
-
     let theme = createTheme();
     theme = responsiveFontSizes(theme);
+    const cartCtx = useContext(CartContext);
 
-    return (<Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            xl={3}
-            container
-            border='groove lightblue 5px'
-            borderRadius='15px'
-            padding='5px'
-            sx={{flewGrow: 1}}
-        >
-            <Grid container item xs={12} borderBottom='dotted lightblue 3px'>
-                <Grid item xs={7}
-                >
-                    <Typography theme={theme} variant="h4">
-                        {props.name}
+    const addToCartHandler = amount => {
+        cartCtx.addItem({
+            id: props.id,
+            name: props.name,
+            description: props.description,
+            price: props.price,
+            image: props.image,
+            amount: amount
+        });
+    }
+
+    return (
+            <Grid
+                  container
+                  justifyContent='space-between'
+                  display='flex'
+                  alignItems='stretch'
+                  item
+                  xs={12}
+                  xl={6}
+                  sx={{
+                      flewGrow: 1,
+                      background: `url(${props.image}) no-repeat center center`,
+                      width: '100%',
+                      height: '50vh',
+                      backgroundSize: 'cover',
+                      borderRadius: '20px',
+                      color: 'white',
+                      padding: '2vh',
+                      opacity: '0.9',
+                  }}
+            >
+                <Grid container item xs={12}>
+                    <Grid item xs={6} align='left'>
+                        <Typography theme={theme} component={'h6'} variant={'h6'}>
+                            {props.name}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6} align={'right'}>
+                        <Typography theme={theme} component={'h4'} variant={'h4'}>
+                            ${props.price}
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid item xs={12} sx={{padding: '10%'}}>
+                    <Typography theme={theme} component={'h6'} variant={'h6'}>
+                        {props.ingredients}
                     </Typography>
                 </Grid>
-                <Grid item xs={5}>
-                    <Typography theme={theme} variant="h4">
-                        ${props.price}
-                    </Typography>
+                <Grid item xs={12}>
+                        <Typography theme={theme} component={'span'} variant={'body2'}>
+                            <MenuItemForm onAddToCart={addToCartHandler}/>
+                        </Typography>
                 </Grid>
             </Grid>
-            <Grid item xs={12} borderBottom='dotted lightblue 3px'>
-                <Typography theme={theme} variant="h6">
-                    {props.ingredients}
-                </Typography>
-            </Grid>
-            <Grid item xs={12}>
-                <input type="number"
-                       min={1}
-                       max={10}
-                       defaultValue={1}
-                       style={{width: '3rem', fontSize: '2rem', height: '2rem', borderRadius: '5px'}}
-                />
-                <Button color='success' style={{fontSize: 24}}>
-                            <span>Add to Cart
-                                <img src={addToCart} style={{height: '20px'}} alt='add to cart'/>
-                            </span>
-                </Button>
-            </Grid>
-        </Grid>
     );
 };
 

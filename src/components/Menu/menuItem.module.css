@@ -1,0 +1,16 @@
+/*
+.menuItem{
+    !*background: linear-gradient(180deg, rgba(49,77,77,1) 28%, rgba(15,80,60,1) 75%, rgba(30,55,91,1) 100%)*!;
+    border: ridge lightblue 5px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.menuItem:hover{
+    background: radial-gradient(circle, rgba(49,77,77,0.95) 53%, rgba(35,55,91,0.7) 100%);
+    border: groove cadetblue 5px;
+}
+
+.dialog{
+    background: radial-gradient(circle, rgba(49,77,77,0.95) 53%, rgba(35,55,91,0.7) 100%);
+}*/

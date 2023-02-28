@@ -1,14 +1,16 @@
 import './App.css';
 import Header from "./components/Header/Header";
-import {Box} from "@mui/material";
-import MenuItemsWrapper from "./components/Menu/MenuItemsWrapper";
+import CartProvider from "./store/CartProvider";
+import * as React from "react";
+import SimpleAccordion from "./components/UI/SimpleAccordion";
 
-function App() {
+const App = () => {
+
     return (
-        <Box className="App">
-                <Header></Header>
-            <MenuItemsWrapper/>
-        </Box>
+        <CartProvider >
+            <Header/>
+            <SimpleAccordion/>
+        </CartProvider>
     );
 }
 

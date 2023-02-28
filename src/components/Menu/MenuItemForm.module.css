@@ -1,0 +1,32 @@
+input{
+    background-color: rgba(138, 43, 226, 0.35);
+    width: 10vh;
+}
+
+.btn-input{
+    width: 4vh;
+    border-radius: 25px;
+    background-color: darkgreen;
+}
+
+.btn-input:hover {
+    background-color: yellowgreen;
+}
+
+.btn-submit{
+    width: 11vh;
+    height: 5vh;
+    background-color: rgba(49,77,77,0.7);
+    border-radius: 25px;
+    border: outset 3px #353ea2;
+    font-weight: bold;
+}
+
+.btn-submit:hover{
+    background-color: #353ea2;
+    border: outset 3px #00373b;
+    cursor: pointer;
+}
+
+
+

@@ -1,8 +1,8 @@
 import {Box, createTheme, Grid, responsiveFontSizes, Typography} from "@mui/material";
-import cartIcon from '../../assets/icons/cart.svg';
 import forkLogo from '.././../assets/icons/fork-with-swirled-pasta-svgrepo-com.svg'
 import HeaderPicture from "./HeaderPicture";
 import classes from "./HeaderPicture.module.css";
+import Cart from "./Cart/Cart";
 
 const Header = (props) => {
 
@@ -19,7 +19,7 @@ const Header = (props) => {
                         component="div"
                         sx={{flexGrow: 1}}
                     >
-                        <h2 style={{}}>Fork</h2>
+                        <h2>Fork</h2>
                         <img
                             alt='fork logo'
                             src={forkLogo}
@@ -27,12 +27,10 @@ const Header = (props) => {
                         />
                     </Typography>
                 </Grid>
-                <Grid container item xs={6}>
-                    <Typography theme={theme} sx={{flexGrow: 1}}>
-                        <img src={cartIcon} style={{height: '80px'}} alt='header cart'/>
-                    </Typography>
-                </Grid>
 
+                <Grid item xs={6}>
+                    <Cart style={{cursor: 'pointer'}} onClick={props.onClick}/>
+                </Grid>
                 <Grid item xs={12}>
                     <HeaderPicture/>
                 </Grid>
