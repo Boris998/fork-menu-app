@@ -13,7 +13,7 @@ import {Box} from "@mui/material";
 
 const SimpleAccordion = () => {
     return (
-            <Box flex={1} sx={{marginTop: '500px'}}>
+            <Box flex={1}>
                 <Accordion className={classes.accordionGradient}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon/>}

@@ -6,44 +6,6 @@ body {
     text-align: center;
 }
 
-.header {
-    height: 100px;
-    background: darkslategrey;
-    width: 100%;
-    z-index: 10;
-}
-
-.wrapper {
-    width: 1170px;
-    margin: 0 auto;
-    background-color: #ad5502;
-}
-
-.logo {
-    width: 30%;
-    float: left;
-    line-height: 100px;
-}
-.logo a {
-    text-decoration: none;
-    font-size: 30px;
-    font-family: poppins;
-    color: gray;
-    letter-spacing: 5px;
-}
-nav {
-    float: right;
-    line-height: 100px;
-}
-nav a {
-    text-decoration: none;
-    font-family: poppins;
-    letter-spacing: 4px;
-    font-size: 20px;
-    margin: 0 10px;
-    color: #fff;
-}
-
 .banner-area {
     width: 100%;
     height: 500px;
@@ -60,9 +22,4 @@ nav a {
     font-family: poppins;
     text-transform: uppercase;
     color: #fff;
-}
-
-h2{
-    margin-bottom: -45px;
-    color: black
 }

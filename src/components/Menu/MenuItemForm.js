@@ -39,7 +39,7 @@ const MenuItemForm = (props) => {
     return (
         <form onSubmit={submitHandler}>
             <Grid container >
-                <Grid item xs={6} align={'right'} sx={{marginTop: '1.5%', paddingRight: '2%'}}>
+                <Grid item xs={6} align={'right'} sx={{marginTop: '1vh', paddingRight: '2%'}}>
                     <Input
                         ref={amountInputRef}
                         input={{

@@ -58,16 +58,17 @@ const Cart = () => {
     }
 
     const cartItems = <ul>{
-        cartCtx.items.map(item => <CartItem
-                key={item.id}
-                name={item.name}
-                description={item.description}
-                ingredients={item.ingredients}
-                amount={item.amount}
-                price={item.price}
-                onRemove={cartRemoveItemHandler.bind(null, item.id)}
-                onAdd={cartAddItemHandler.bind(null, item)}
-            />
+        cartCtx.items.map(item =>
+                <CartItem
+                    key={item.id}
+                    name={item.name}
+                    description={item.description}
+                    ingredients={item.ingredients}
+                    amount={item.amount}
+                    price={item.price}
+                    onRemove={cartRemoveItemHandler.bind(null, item.id)}
+                    onAdd={cartAddItemHandler.bind(null, item)}
+                />
         )
     }
     </ul>;
@@ -98,7 +99,7 @@ const Cart = () => {
     </div>
 
     return (
-        <>
+        <Grid item xs={12}>
             <Button onClick={handleOpenDialog}>
                 <Typography theme={theme}
                             sx={{flexGrow: 1}}
@@ -106,15 +107,15 @@ const Cart = () => {
                     <img src={cartIcon} style={{height: '80px'}} alt='header cart'/>
                 </Typography>
             </Button>
-            <Dialog open={openDialog} onClose={handleCloseDialog}>
-                <Typography>
-                    asd
-                    {isSubmitting  && cartModalContent}
+            <Dialog open={openDialog} onClose={handleCloseDialog} >
+                <Typography variant={'h6'} sx={{background: 'radial-gradient(circle, rgba(49,77,77,0.5) 53%, rgba(35,55,91,0.7) 100%);'}}>
+
+                    {cartModalContent}
                     {isSubmitting && isSubmittingModalContent}
                     {(isSubmitting || didSubmit) && didSubmitModalContent}
                 </Typography>
             </Dialog>
-        </>
+        </Grid>
     );
 }
 

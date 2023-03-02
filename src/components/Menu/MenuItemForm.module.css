@@ -15,16 +15,17 @@ input{
 
 .btn-submit{
     width: 11vh;
-    height: 5vh;
+    height: 6vh;
     background-color: rgba(49,77,77,0.7);
-    border-radius: 25px;
+    border-radius: 15px;
+    padding: 5px;
     border: outset 3px #353ea2;
     font-weight: bold;
 }
 
 .btn-submit:hover{
-    background-color: #353ea2;
-    border: outset 3px #00373b;
+    background-color: #00373b;
+    border: inset 3px #00373b;
     cursor: pointer;
 }
 
