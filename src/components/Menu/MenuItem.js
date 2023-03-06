@@ -35,27 +35,21 @@ const MenuItem = (props) => {
             }}
         >
             <Grid container xs={12}>
-                <Grid item xs={6} align='left'>
-                    <Typography theme={theme} component={'h6'} variant={'h6'}>
+                <Grid item xs={9} md={10} align='left' >
+                    <Typography theme={theme} component={'h4'} variant={'h4'}>
                         {props.name}
                     </Typography>
                 </Grid>
-                <Grid item xs={6} align={'right'}>
+                <Grid item xs={3} md={2} align={'right'} sx={{width: '100%'}}>
                     <Typography theme={theme} component={'h4'} variant={'h4'}>
                         ${props.price}
                     </Typography>
                 </Grid>
             </Grid>
-            <Grid item xs={12}>
-                <Grid container sx={{height: '30vh', padding: '10%'}}>
-                    <Grid item xs={12}>
-                        <Typography theme={theme} component={'h6'} variant={'h6'}>
-                            {props.ingredients}
-                        </Typography>
-                    </Grid>
-                </Grid>
+            <Grid item xs={12} sx={{fontSize: {xs: '16px',  sm: '20px'}, paddingTop: {sm: '100px'}}}>
+                    {props.ingredients}
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{paddingTop: {sm: '50px'}}}>
                 <Typography theme={theme} component={'span'} variant={'body2'}>
                     <MenuItemForm onAddToCart={addToCartHandler}/>
                 </Typography>
