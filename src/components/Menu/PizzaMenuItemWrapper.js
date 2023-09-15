@@ -46,7 +46,7 @@ const PizzaMenuItemsWrapper = () => {
 
 
     const renderMenuItems = () => pizzas.map(pizza =>
-        <Grid item  xl={6} lg={6} xs={12}>
+        <Grid item key={pizza.id} xl={6} lg={6} xs={12}>
             <MenuItem
                 key={pizza.id}
                 id={pizza.id}

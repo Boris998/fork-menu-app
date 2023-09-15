@@ -14,11 +14,10 @@ input{
 }
 
 .btn-submit{
-    width: 11vh;
-    height: 6vh;
+    width: 15vh;
+    height: 7.5vh;
     background-color: rgba(49,77,77,0.7);
     border-radius: 15px;
-    padding: 5px;
     border: outset 3px #353ea2;
     font-weight: bold;
 }

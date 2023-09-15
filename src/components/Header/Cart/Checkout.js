@@ -1,6 +1,7 @@
 import useInput from "../../../hooks/use-input";
 import {useEffect, useState} from "react";
 import classes from './Checkout.module.css';
+import {Button} from "@mui/material";
 
 const Checkout = props => {
     const {
@@ -114,6 +115,9 @@ const Checkout = props => {
                 />
                 {cityHasError && <label>City field is required</label>}
             </div>
+            <Button type='submit' disabled={!formIsValid}>
+                Proceed
+            </Button>
         </form>
     );
 

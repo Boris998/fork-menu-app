@@ -34,7 +34,7 @@ const MenuItem = (props) => {
                 padding: '20px',
             }}
         >
-            <Grid container xs={12}>
+            <Grid container >
                 <Grid item xs={9} md={10} align='left' >
                     <Typography theme={theme} component={'h4'} variant={'h4'}>
                         {props.name}

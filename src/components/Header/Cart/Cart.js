@@ -21,8 +21,6 @@ const Cart = () => {
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
     const hasItems = cartCtx.items.length > 0;
 
-    console.log('fix the Cart component',cartCtx);
-
     const handleOpenDialog = () => {
         setOpenDialog(true);
     };
@@ -85,7 +83,7 @@ const Cart = () => {
             <span>Total amount</span>
             <span>{totalAmount}</span>
         </Grid>
-        {isCheckout && <Checkout onConfirm={submitOrderHandler}/>}
+        {!hasItems || (isCheckout && <Checkout onConfirm={submitOrderHandler}/>)}
         {isCheckout || modalActions}
     </React.Fragment>
 
@@ -94,7 +92,7 @@ const Cart = () => {
     const didSubmitModalContent = <div>
         <Grid item xs={12}>
             <p>successful!!!</p>
-            <Button onClose={handleCloseDialog}>Close</Button>
+            <Button onClick={handleCloseDialog}>Close</Button>
         </Grid>
     </div>
 
@@ -107,9 +105,8 @@ const Cart = () => {
                     <img src={cartIcon} style={{height: '80px'}} alt='header cart'/>
                 </Typography>
             </Button>
-            <Dialog open={openDialog} onClose={handleCloseDialog} >
-                <Typography variant={'h6'} sx={{background: 'radial-gradient(circle, rgba(49,77,77,0.5) 53%, rgba(35,55,91,0.7) 100%);'}}>
-
+            <Dialog open={openDialog} onClose={handleCloseDialog} sx={{borderRadius: '25px'}}>
+                <Typography variant={'h6'} sx={{background: 'radial-gradient(circle, rgba(49,77,77,0.5) 53%, rgba(35,55,91,0.7) 100%)', padding: '10px'}}>
                     {cartModalContent}
                     {isSubmitting && isSubmittingModalContent}
                     {(isSubmitting || didSubmit) && didSubmitModalContent}

@@ -47,7 +47,7 @@ const BeefMenuItemsWrapper = () => {
 
 
     const renderMenuItems = () => beef.map(beefMeal =>
-        <Grid item  xl={6} lg={6} xs={12}>
+        <Grid item key={beefMeal.id} xl={6} lg={6} xs={12} >
             <MenuItem
                 key={beefMeal.id}
                 id={beefMeal.id}

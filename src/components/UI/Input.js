@@ -8,7 +8,7 @@ const Input = React.forwardRef((props, ref) => {
                min={1}
                max={10}
                defaultValue={1}
-               style={{width: '5vh', fontSize: '2rem', height: '3vh', borderRadius: '5px'}}
+               style={{width: '7vh', fontSize: '2.5rem', height: '5vh', borderRadius: '5px'}}
         />
     </>
 });

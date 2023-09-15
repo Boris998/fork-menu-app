@@ -46,7 +46,7 @@ const SaladMenuItemsWrapper = () => {
 
 
     const renderMenuItems = () => salads.map(salad =>
-        <Grid item xl={6} lg={6} xs={12}>
+        <Grid item key={salad.id} xl={6} lg={6} xs={12}>
             <MenuItem
                 key={salad.id}
                 id={salad.id}
